@@ -408,11 +408,7 @@ with tab2:
         fig.add_hline(y=fx_base, line_dash="dash", line_color="#e53e3e",
                       annotation_text=f"기준가 ₩{fx_base:,}", annotation_position="top left",
                       annotation_font_color="#e53e3e")
-        fig.update_layout(height=500, title="원/달러 환율 추이", template="plotly_white",
-                          font=dict(family="Noto Sans KR"), showlegend=True,
-                          legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-                          margin=dict(l=20, r=20, t=60, b=20), yaxis_title="원/달러 (₩)"),
-                          yaxis=dict(autorange=True, rangemode="normal")
+fig.update_layout(height=500, title="원/달러 환율 추이", template="plotly_white", font=dict(family="Noto Sans KR"), showlegend=True, legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1), margin=dict(l=20, r=20, t=60, b=20), yaxis_title="원/달러 (₩)", yaxis=dict(autorange=True, rangemode="normal"))
         st.plotly_chart(fig, use_container_width=True)
 
 with tab3:
@@ -528,6 +524,7 @@ st.markdown(f"""
     ⚠️ 본 대시보드는 참고용이며, 최종 판단은 담당 부서에서 수행하시기 바랍니다.
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
