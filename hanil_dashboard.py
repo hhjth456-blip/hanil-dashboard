@@ -401,7 +401,7 @@ with tab2:
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=data.index, y=data['Close'], name="USD/KRW",
                                  line=dict(color='#3182ce', width=2.5),
-                                 fill='tozeroy', fillcolor='rgba(49, 130, 206, 0.08)'))
+                                 fill='tonexty', fillcolor='rgba(49, 130, 206, 0.0)'))
         ma20 = data['Close'].rolling(window=20).mean()
         fig.add_trace(go.Scatter(x=data.index, y=ma20, name="20일 이평선",
                                  line=dict(color='#d69e2e', width=2, dash='dot')))
@@ -411,7 +411,8 @@ with tab2:
         fig.update_layout(height=500, title="원/달러 환율 추이", template="plotly_white",
                           font=dict(family="Noto Sans KR"), showlegend=True,
                           legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-                          margin=dict(l=20, r=20, t=60, b=20), yaxis_title="원/달러 (₩)")
+                          margin=dict(l=20, r=20, t=60, b=20), yaxis_title="원/달러 (₩)"),
+                          yaxis=dict(autorange=True, rangemode="normal"),
         st.plotly_chart(fig, use_container_width=True)
 
 with tab3:
@@ -527,4 +528,5 @@ st.markdown(f"""
     ⚠️ 본 대시보드는 참고용이며, 최종 판단은 담당 부서에서 수행하시기 바랍니다.
 </div>
 """, unsafe_allow_html=True)
+
 
