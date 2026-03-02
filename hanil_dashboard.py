@@ -3,7 +3,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # ========================================
 # 페이지 설정
@@ -182,7 +182,7 @@ with st.sidebar:
 st.markdown(f"""
 <div class="main-header">
     <h1>📊 한일전기 원자재 인텔리전스 대시보드</h1>
-    <p>구리 · 환율 · 에너지 — 실시간 모니터링 & 원가 영향 분석 | {datetime.now().strftime('%Y년 %m월 %d일 %H:%M')} 기준</p>
+    <p>구리 · 환율 · 에너지 — 실시간 모니터링 & 원가 영향 분석 | {datetime.now(timezone(timedelta(hours=9))).strftime('%Y년 %m월 %d일 %H:%M')} 기준</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -527,3 +527,4 @@ st.markdown(f"""
     ⚠️ 본 대시보드는 참고용이며, 최종 판단은 담당 부서에서 수행하시기 바랍니다.
 </div>
 """, unsafe_allow_html=True)
+
