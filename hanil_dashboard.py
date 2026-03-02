@@ -461,8 +461,8 @@ if "구리" in all_data and "원/달러 환율" in all_data:
         scenarios = [
             {"name": "🟢 하락", "price": 10000, "desc": "Goldman Sachs 하반기"},
             {"name": "🟡 현행", "price": round(copper_ton_now / 100) * 100, "desc": f"현재 ${copper_ton_now:,.0f} 수준"},
-            {"name": "🔴 상승", "price": 13000, "desc": "J.P.Morgan 2Q 정점"},
-            {"name": "🔴🔴 극단", "price": 15000, "desc": "BofA 최고치"},
+            {"name": "🔴 상승", "price": 15000, "desc": "J.P.Morgan 2Q 정점"},
+            {"name": "🔴🔴 극단", "price": 17000, "desc": "BofA 최고치"},
         ]
         cols = st.columns(4)
         for i, s in enumerate(scenarios):
@@ -521,6 +521,7 @@ st.markdown(f"""
     ⚠️ 본 대시보드는 참고용이며, 최종 판단은 담당 부서에서 수행하시기 바랍니다.
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
